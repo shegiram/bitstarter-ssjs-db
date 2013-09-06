@@ -2,12 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My First Bitstarter</title>
+    <title>Money Sence</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">    
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">   
+    <link href="https://rawgithub.com/shegiram/roundabt/master/demos.css" rel="stylesheet" /> 
     <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+    <script src="https://rawgithub.com/shegiram/roundabt/master/mint.js" type="text/javascript"></script>
     <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
@@ -17,7 +19,7 @@
       /* Large desktop */
       @media (min-width: 980px) { 
         body {
-         padding-top: 60px;
+         padding-top: 40px;
         }
        .linediv-l {
          border-right: 1px white solid;
@@ -25,6 +27,12 @@
        .linediv-r {
          border-left: 1px white solid;
        }
+      }
+
+      @media (max-width: 800px) { 
+        .github-fork-ribbon-wrapper {
+          display: none;
+        }
       }
 
       /* Landscape phones and down */
@@ -59,8 +67,47 @@
         font-size: 18px;
         line-height: 24px;
       }
+      p.one {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      .navbar-inner{
+        background-image: url(https://i.imgur.com/IcBYl8u.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        -moz-box-shadow:  0 2px 5px 5px #333333;
+        -webkit-box-shadow:  0 2px 5px 5px #333333;
+        box-shadow:  0 2px 5px 5px #333333;
+        }
 
       /* Video pitch and Action */
+
+      .jumbotron {
+        margin-bottom: 25px;
+        padding: 30px 0;
+        background-image: url(https://i.imgur.com/no9rRdJ.jpg);
+        color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: inset 0 5px 15px rgba(0,0,0,.4), inset 0 -5px 15px rgba(0,0,0,.4);
+        -webkit-box-shadow: inset 0 5px 15px rgba(0,0,0,.4), inset 0 -5px 15px rgba(0,0,0,.4);
+        -moz-box-shadow: inset 0 5px 15px rgba(0,0,0,.4), inset 0 -5px 15px rgba(0,0,0,.4);
+        -khtml-box-shadow: inset 0 5px 15px rgba(0,0,0,.4), inset 0 -5px 15px rgba(0,0,0,.4);
+        -ms-box-shadow: inset 0 5px 15px rgba(0,0,0,.4), inset 0 -5px 15px rgba(0,0,0,.4);
+        -o-box-shadow: inset 0 5px 15px rgba(0,0,0,.4), inset 0 -5px 15px rgba(0,0,0,.4); 
+      }
+
+      .jumbotron h1, .jumbotron p.lead {
+        background: -webkit-linear-gradient(#fff, #eee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .jumbotron .demo {
+        text-align: center;
+      }
+
       .pitch {
         padding: 2.5% 0%;
       }
@@ -68,14 +115,76 @@
         padding: 2% 0%;
       }
       .actions {
-        background-color: #343434;
-        padding: 3% 0%;
+        background-image: url(https://i.imgur.com/26nMSNb.png);
+        padding: 22px 0%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: inset 0 5px 15px rgba(0,0,0,.3), inset 0 -5px 15px rgba(0,0,0,.3);
+        -webkit-box-shadow: inset 0 5px 15px rgba(0,0,0,.3), inset 0 -5px 15px rgba(0,0,0,.3);
+        -moz-box-shadow: inset 0 5px 15px rgba(0,0,0,.3), inset 0 -5px 15px rgba(0,0,0,.3);
+        -khtml-box-shadow: inset 0 5px 15px rgba(0,0,0,.3), inset 0 -5px 15px rgba(0,0,0,.3);
+        -ms-box-shadow: inset 0 5px 15px rgba(0,0,0,.3), inset 0 -5px 15px rgba(0,0,0,.3);
+        -o-box-shadow: inset 0 5px 15px rgba(0,0,0,.3), inset 0 -5px 15px rgba(0,0,0,.3);
       }
-      .video, .thermometer, .order, .social, .statistics {
+      .video, .thermometer, .order, .statistics {
         text-align: center;
+      }
+      .social h2 {
+        float: left;
+        margin-right: 50px;
+      }
+      .addthis_toolbox {
+        float: center;
+        width: 400px;
+        margin-top: 20px;
       }
       .statistics h3, .statistics p {
         color: white;
+      }
+
+      .accordion-inner p {
+        font-size: 14px;
+      }
+
+      .section1, .section2 {
+        margin-bottom: 30px;
+      }
+
+      .newsletter, .coursera {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .newsletter label {
+        display: inline-block;
+        margin: 0 20px 0 0;
+        line-height: 
+      }
+
+      .newsletter input {
+        margin: 0 0 0 5px;
+      }
+
+      .tweet-wrap {
+        width: 440px;
+        height: 40px;
+        margin: 0 auto;
+      }
+
+      .tweet {
+        height: 30px;
+        float: left;
+        padding: 5px 10px 0;
+        display: block;
+        line-height: 35px;
+      }
+
+      .tweetescort {
+        height: 40px;
+        float: left;
+        display: block;
+        line-height: 40px !important;
+        color: #000700;
       }
 
       /* Marketing Copy and Footer */
@@ -87,196 +196,362 @@
       .asset {
         padding: 2.5% 0%;
       }
+      .lpad {
+        padding-left: 3%
+      }
+      .mockuplink {
+        position: relative;
+      }
+      .mockuplink:hover img {
+        opacity: 0.5;
+      }
+      .mockuplink:hover .btn {
+        opacity: 1;
+      }
+      .mockuplink img {
+        transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
+      }
+      .mockuplink .btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 210px;
+        margin-left: -105px;
+        margin-top: -15px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
+      }
       .footer {
         color: #cccccc;
         text-align: center;
       }
       .footer p {
-        font-size: 11px;
+        font-size: 10px;
       }
       .footer a {
         color: #ccccff;
       }
+    </style>
 
-     /* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */      
-     div.addthis_toolbox {
-      width: 174px;
-      margin: 0 auto;
+    <style type="text/css">
+    /* Left will inherit from right (so we don't need to duplicate code */
+    .github-fork-ribbon {
+      /* The right and left lasses determine the side we attach our banner to */
+      position: absolute;
+
+      /* Add a bit of padding to give some substance outside the "stitching" */
+      padding: 2px 0;
+
+      /* Set the base colour */
+      background-color: #008000;
+
+      /* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.00)), to(rgba(0, 0, 0, 0.15)));
+      background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+      background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+      background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+      background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+      background-image: linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');
+
+      /* Add a drop shadow */
+      -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+
+      z-index: 9999;
+    }
+
+    .github-fork-ribbon a,
+    .github-fork-ribbon a:hover {
+      /* Set the font */
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+
+      /* Set the text properties */
+      text-decoration: none;
+      text-shadow: 0 -1px rgba(0,0,0,0.5);
+      text-align: center;
+
+      /* Set the geometry. If you fiddle with these you'll also need to tweak the top and right values in #github-fork-ribbon. */
+      width: 300px;
+      line-height: 20px;
+
+      /* Set the layout properties */
+      display: inline-block;
+      padding: 2px 0;
+
+      /* Add "stitching" effect */
+      border-width: 1px 0;
+      border-style: dotted;
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    .github-fork-ribbon a .smalltext {
+      font-size: 12px;
+    }
+
+    .github-fork-ribbon-wrapper {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      z-index: 9999;
+    }
+
+    .github-fork-ribbon-wrapper.fixed {
+      position: fixed;
+    }
+
+    .github-fork-ribbon-wrapper.left {
+      left: 0;
+    }
+
+    .github-fork-ribbon-wrapper.right {
+      right: 0;
+    }
+
+    .github-fork-ribbon-wrapper.left-bottom {
+      position: fixed;
+      top: inherit;
+      bottom: 0;
+      left: 0;
+    }
+
+    .github-fork-ribbon-wrapper.right-bottom {
+      position: fixed;
+      top: inherit;
+      bottom: 0;
+      right: 0;
+    }
+
+    .github-fork-ribbon-wrapper.left .github-fork-ribbon {
+      top: 52px;
+      left: -73px;
+
+      /* Rotate the banner 45 degrees */
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    </style>
+    <style>
+     ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        width: 40em;
+        height: 22em;
+        
+      }
+      li {
+        height: 24em;
+        width: 34em;
+         /* background-color: #bbb; */  
+        text-align: center; 
+        cursor: pointer;
+      }
+      
+        )
+      li.roundabout-in-focus {
+          cursor: default;
+      }
+      li span img {
+        display: block;
+        /*padding-top: 2em;*/
+        position: absolute;
+        width: 100%;
+      }
+      div.addthis_toolbox {
+       width: 150px;
+       margin: 0 auto;
      }
     </style>
-<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-42843113-1']);
-  _gaq.push(['_trackPageview']);
+     <script type="text/javascript">
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-42923659-1']);
+        _gaq.push(['_trackPageview']);
 
-</script>
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+     </script>    
+
+    
   </head>
   <body>
+    <div class="github-fork-ribbon-wrapper left fixed">
+        <div class="github-fork-ribbon">
+            <a href="https://www.coursera.org/course/startup">Made  For  Coursera<br /><span class="smalltext">Stanford Startup Engineering Course</span></a>
+        </div>
+    </div>
 
     <!-- Mobile-friendly navbar adapted from example. -->
     <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inner navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar"
-                  data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#">Bitstarter</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="/orders">Orders</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+          <div class="tweet-wrap">
+            <div class="tweet">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-text="Money Sence is all about teaching kids to be financially savy for a brighter future. Tweet to share your views: " data-size="large" data-count="none">Tweet</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+          <span class="tweetescort">Wanna raise your kids with Money Sense? </span>
+         </div>
+        </div> 
       </div>
     </div>
 
-    <!-- We use row-fluid inside containers to achieve a resizable layout. -->
-    <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
-    <!-- http://stackoverflow.com/a/12270322 -->
-    <div class="container">
-      <!-- Font and paired font of .heading/.subheading and body from Google Fonts -->
-      <!-- www.google.com/fonts/specimen/Ubuntu -->
-      <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
+    <header class="jumbotron">
       <div class="row-fluid heading">
         <div class="span12">
-          <h1>Product: Development Version</h1>
+          <img src="https://i.imgur.com/XHQvFTK.png" alt="moneySence" class="img-rounded">
         </div>
       </div> 
       <div class="row-fluid subheading">
         <div class="span12">
           <!-- Special typography from Bootstrap for lead paragraph. -->
           <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
-          <p class="lead">One sentence description.</p>
+          <p class="lead">Lead your kids to <strong>Financial</strong> Wisdom.</p>
         </div>
       </div>
+    </header>
+
+    <!-- We use row-fluid inside containers to achieve a resizable layout. -->
+    <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
+    <!-- http://stackoverflow.com/a/12270322 -->
+    <div class="container">
       <div class="row-fluid pitch">
-        <div class="span5 offset1 video">
-          <img class="img-polaroid" src="http://placehold.it/480x300">
-        </div>
+        <div class="span10 offset1">
+       <ul>
+         <li><span><img src="https://i.imgur.com/HS5lLkH.png"></span></li>
+         <li><span><img src="https://i.imgur.com/6ikjMiH.png"></span></li>
+         <li><span><img src="https://i.imgur.com/CpOH7vK.png"></span></li>
+         <li><span><img src="https://i.imgur.com/6rW15Dg.png"></span></li> 
+         <li><span><img src="https://i.imgur.com/e2NnCVf.png"></span></li>
+         <li><span><img src="https://i.imgur.com/QwX9PY2.png"></span></li>
+       </ul>
+         <!-- <div class="interact"> </div>   -->
+          <script src="https://rawgithub.com/shegiram/roundabt/master/jquery.js"></script>
+          <script src="https://rawgithub.com/shegiram/roundabt/master/jquery.roundabout2.js"></script>
+          <script>
+                $(document).ready(function() {
+                $('ul').roundabout();
+           });
+         </script>      
+        </div>   
+      </div>      
 
-        <!-- We define a new 'actions' div to contain statistics, order, and share buttons.-->
-        <div class="span5 actions">
-          <div class="row-fluid">
-          <div class="span8 offset2">
-            <div class="row-fluid statistics">
-              <div class="span4">
-                <!-- linediv-l and linediv-r give dividing lines that look
-                different in horizontal and vertical layouts, illustrating
-                media queries. -->
-                <div class="linediv-l">
-                <h3>1000</h3> <p>backers</p>
-                </div>
-              </div>
-              <div class="span4">
-                <div class="linediv-c">
-                  <h3>$6000</h3> <p>of $10,000</p>
-                </div>
-              </div>
-              <div class="span4">
-                <div class="linediv-r">
-                <h3>10</h3> <p>days left</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row-fluid">
-          <div class="span10 offset1">
-            <!-- Bootstrap progress bar -->
-            <!-- http://twitter.github.io/bootstrap/components.html#progress -->
-            <div class="thermometer progress active">
-              <div class="bar bar-success" style="width: 60%;"></div>
-              <div class="bar bar-warning" style="width: 40%;"></div>
-            </div>
-          </div>
-          </div>
-          <div class="row-fluid">
-          <div class="span6 offset3 order">
-	    <a class="coinbase-button" data-button-style="custom_large" data-button-text="Preorder with Bitcoin" data-code="13b56883764b54e6ab56fef3bcc7229c" href="https://coinbase.com/checkouts/13b56883764b54e6ab56fef3bcc7229c">Preorder with Bitcoin</a><script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
-	  </div>
-          </div>
-          <div class="row-fluid">
-          <div class="span8 offset2 social">
-            <!-- AddThis Button BEGIN -->
-            <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-              <a class="addthis_button_preferred_1"></a>
-              <a class="addthis_button_preferred_2"></a>
-              <a class="addthis_button_compact"></a>
-              <a class="addthis_counter addthis_bubble_style"></a>
-            </div>
-	     <script type="text/javascript">var addthis_config = 
-	      {"data_track_addressbar":true};</script>
-	     <script type="text/javascript" 
- 		     src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51e5f5d9549fdf9b"></script>
-            <!-- AddThis Button END -->
-          </div>
-          </div>
-        </div>
-        </div>
-      </div>
-
-      <!-- Beyond this part the marketing copy begins. -->
-      <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/text-align -->
-      <!-- http://twitter.github.io/bootstrap/base-css.html#images -->
-      <!-- http://placehold.it -->
       <div class="row-fluid section1">
-        <div class="span5 offset1 asset">
-          <img class="img-polaroid" src="http://placehold.it/480x300">
+        <div class="span2 offset3 asset lpad mockuplink">          
+            <img src="https://i.imgur.com/NpdSwi4.png" alt="PlayMoney Series" class="img-rounded">
+             <span class="btn btn-success">PlayMoney Series Order TBD</span> 
         </div>
-        <div class="span5 copy">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
-            mollis justo velit at nunc. Fusce nec egestas sem. Donec
-            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
-            volutpat lorem ut congue malesuada. In facilisis scelerisque
-            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
-            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
-            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
-            rutrum, nunc leo tempus nisl, eu mollis justo velit at
-            nunc. Fusce nec egestas sem. Donec fringilla.
-          </p>
+        <div class="span2 asset lpad mockuplink">          
+            <img src="https://i.imgur.com/ToKygea.png" alt="SoftMoney Series" class="img-rounded">
+            <span class="btn btn-success">SoftMoney Series Order TBD</span> 
         </div>
-      </div>
-
-      <div class="row-fluid section2">
-        <div class="span5 offset1 copy copy-right">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
-            mollis justo velit at nunc. Fusce nec egestas sem. Donec
-            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
-            volutpat lorem ut congue malesuada. In facilisis scelerisque
-            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
-            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
-            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
-            rutrum, nunc leo tempus nisl, eu mollis justo velit at
-            nunc. Fusce nec egestas sem. Donec fringilla.
-          </p>
+        <div class="span2 asset lpad mockuplink">    
+             <img src="https://i.imgur.com/n8tz9l1.png" alt="RealMoney Series" class="img-rounded">
+             <span class="btn btn-success">RealMoney Series Order TBD</span> 
         </div>
-        <div class="span5 asset">
-          <img class="img-polaroid" src="http://placehold.it/480x300">
+        <div class="span2 asset lpad mockuplink"> 
+             <a href="/orders">   
+             <img src="https://i.imgur.com/8IZiVqG.png" alt="RealMoney Series" class="img-rounded">
+             <span class="btn btn-success">Orders paid with Bitcoin</span> 
+           </a>
         </div>
       </div>
+    
+      <div class="row-fluid section1">
+        <div class="span5 offset1">
+          <p class="one">Plan of Action </p>
+          <p> <strong>Lesson Plans </strong>will be prepared in consultation with Financial Experts/ Tutors, K-12 Curricula and Child Psychologists. <br>
+             <b>Expert programmer </b> will be recruited for 2 months to develop the required apps suitable for windows, iPad platforms.<br>
+             <b>Reach out to the neighbourhood school </b> to distribute the Beta version to get valuable feedback.<br>
+              <b>The product is ready to market</b> once the feedback is factored in.
+              </p>
+        </div>
+             <!-- We define a new 'actions' div to contain statistics, order and share buttons -->
+        <div class="span5 actions">
+         <div class="row-fluid">
+          <div class="span8 offset2">
+            <div class="row-fluid statistics img-rounded">
+              <div class="span4">
+              <!-- linediv-l and linediv-r give dividing lines that look different in horizontal and vertical layouts, illustrating media queries -->
+                <div class="linediv-l">    
+                  <h3>2000</h3><p>backers</p>
+                </div>
+              </div> 
+           <div class="span4">
+             <div class="linediv-c">
+                 <h3>$0</h3> <p>of $50,000</p>
+             </div>
+          </div>
+         <div class="span4">
+           <div class="linediv-r">
+               <h3>10</h3><p> days left</p>
+           </div>
+         </div>
+        </div>  
+      </div>
+      <div class="row-fluid">
+       <div class="span10 offset1">
+             <!-- Bootstrap progress bar -->
+             <!--  http://twitter.github.io/bootstrap/components.html#progress -->
+        <div class="thermometer progress active">
+         <div class="bar bar-success" style="width: 10.5050000000000001%;"></div>
+         <div class="bar bar-warning" style="width: 89.495%"></div>
+        </div>
+       </div>
+     </div>
 
-      <!-- For the FAQ, we introduce a little bit of JS, using the accordion. -->
-      <!-- This brings in jquery.js and bootstrap.js as dependencies. -->
-      <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
+      <div class="row-fluid">
+        <div class="span6 offset3 order">
+       <!-- Standard Bootstrap button -->
+       <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
+           
+            <a class="coinbase-button" data-code="e272e83ad835391aaea7be0ba13d6538" data-custom="MS-1234" href="https://coinbase.com/checkouts/e272e83ad835391aaea7be0ba13d6538">Pay With Bitcoin</a>
+            <script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class= "span8 offset2 social">
+      <!-- Social buttons are not included in the default bootstrap -->
+      <!-- See: http://noizwaves.github.io.bootstrap-social-buttons -->
+   
+       <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+          <a class="addthis_button_facebook"></a>
+          <a class="addthis_button_compact"></a>
+          <a class="addthis_counter addthis_bubble_style"></a>
+        </div>
+          <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51fc936b0f8ff3f1"></script>
+      <!-- AddThis Button END -->
+    
+          </div>
+        </div>
+      </div>
+    </div>
+   </div> 
+
+
+      </div>
+    </div>
+
       <div class="row-fluid faq">
           <div class="span10 offset1">
             <h3>FAQ</h3>
@@ -285,31 +560,60 @@
                 <div class="accordion-heading">
                   <a class="accordion-toggle" data-toggle="collapse"
                      data-parent="#accordion2" href="#collapseOne">
-                    What does FAQ stand for?
+                    When will the details of the series be available?
                   </a>
                 </div>
                 <div id="collapseOne" class="accordion-body collapse">
                   <div class="accordion-inner">
-                    Frequently Asked Question.
+                    <p> The details of all MoneySence series will be available on this website within the next 4 months</p>                    
                   </div>
                 </div>
               </div>
+
               <div class="accordion-group">
                 <div class="accordion-heading">
                   <a class="accordion-toggle" data-toggle="collapse"
                      data-parent="#accordion2" href="#collapseTwo">
-                    What's a Frequently Asked Question?
+                    When can the first order be placed?
                   </a>
                 </div>
                 <div id="collapseTwo" class="accordion-body collapse">
                   <div class="accordion-inner">
-                    A question which is commonly asked by users.
+                    <p>We expect to take our first order on April1, 2014. The website would also be ready with detailed catalogues.</p>                    
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseThree">
+                    How much funding is needed?
+                  </a>
+                </div>
+                <div id="collapseThree" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <p>We expect $50,000 to cover the expert consultant's time and services in addition to the app's programmers efforts. The apps will be reasonably priced and is expected to work on all major platforms</p>                    
+                  </div>
+                </div>
+              </div>  
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseFour">
+                    Will Backers will be contacted?
+                  </a>
+                </div>
+                <div id="collapseFour" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <p>The Backers will get their money back once 10,000 apps are sold; A complete set of each catagory will be sent once 20,000 apps are sold through the website. All the releases and versions will also be shipped with thanks and appreciation.</p>                    
+                  </div>
+                </div>
+              </div>
+
+
+           <!-- </div>   -->
+          </div>
       </div>
 
       <!-- Not crucial, but we put this under a CC By-SA 3.0 license. -->
@@ -324,16 +628,29 @@
         </div>
       </div>
     </div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-42843113-1', 'bitstart.net');
-  ga('send', 'pageview');
-
-</script>
   </body>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      today = new Date();
+
+      BigDay = new Date("September 09, 2013");
+      msPerDay = 24 * 60 * 60 * 1000 ;
+      timeLeft = (BigDay.getTime() - today.getTime());
+      e_daysLeft = timeLeft / msPerDay;
+      daysLeft = Math.floor(e_daysLeft);
+
+      $("#countdown").text(daysLeft);
+    });
+  </script>
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-42923659-1', 'herokuapp.com');
+       ga('send', 'pageview');
+
+     </script>          
 </html>
